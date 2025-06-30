@@ -76,10 +76,16 @@ spec:
     - port: 5000
       targetPort: 5000
       
-
+minikube start
+minikube status
+kubectl get nodes
+kubectl get pods -o wide
+minikube ssh
+curl nginx ip-address
 docker build -t sandhya454/app1-k8s:latest .
 docker push sandhya454/app1-k8s:latest
 kubectl apply -f deployment.yaml
+kubectl apply -f pod.yaml
 kubectl apply -f service.yaml
 kubectl get pods
 kubectl get svc
